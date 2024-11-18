@@ -1,0 +1,15 @@
+
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    padding:0;
+    margin: 0;
+}
+
+#outlet {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px;
+}
