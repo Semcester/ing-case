@@ -18,8 +18,11 @@
     "serve": "web-dev-server --open"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "@vaadin/router": "^2.0.0",
     "@web/dev-server-esbuild": "^1.0.4",
     "@web/dev-server-legacy": "^2.1.1",
+    "immer": "^10.1.1",
     "lit": "^3.3.1"
   },
   "devDependencies": {

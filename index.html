@@ -2,12 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Quicksand:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>ING HR App</title>
-<script type="module" src="/index.js"></script>
+  <script>
+     window.process = { env: { NODE_ENV: 'development' } };
+  </script>
+  <script type="module" src="/index.js"></script>
+  <style>
+    * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    margin: 0;
+    }
+    #outlet{
+    padding:1rem;
+    }
+  </style>
 </head>
 
 <body>
-  <app-root></app-root>
+   <navigation-menu></navigation-menu>
+   <div id="outlet"></div>
 </body>
 
 </html>
