@@ -1,0 +1,28 @@
+{
+  "name": "ing-case",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Semcester/ing-case#readme",
+  "bugs": {
+    "url": "https://github.com/Semcester/ing-case/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Semcester/ing-case.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "serve": "web-dev-server --open"
+  },
+  "dependencies": {
+    "@web/dev-server-esbuild": "^1.0.4",
+    "@web/dev-server-legacy": "^2.1.1",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  }
+}
