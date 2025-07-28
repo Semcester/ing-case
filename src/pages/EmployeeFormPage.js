@@ -47,7 +47,6 @@ export class EmployeeFormPage extends BaseLocalizedElement {
   };
 
   _onSubmit(e) {
-    console.log('BUSSS')
     const data = e.detail;
     if (this.mode === 'edit') {
       store.dispatch(updateEmployee(data));
