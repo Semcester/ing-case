@@ -53,6 +53,50 @@ class NavigationMenu extends LitElement {
   document.dispatchEvent(new CustomEvent("language-changed"));
   }
 
+  render() {
+    return html`
+      <nav>
+        <div class="nav-left">
+          <div class="logo-container">
+            <a href="/" class="logo-navigate">
+              ${ING_LOGO()}
+              <h4>ING</h4>
+            </a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <div>
+            <a class="btn-container" href="/">
+            ${EMPLOYEE_ICON()}
+            ${translate("employees", this.currentLang)}
+          </a>
+          </div>
+          <div>
+            <a class="btn-container" href="/employee/new">
+          ${ADDNEW_ICON()}
+          ${translate("addNew", this.currentLang)}
+          
+        </a>
+          </div>
+
+          <div class="language-dropdown ${this.isOpen ? "open" : ""}">
+            <div class="selected-lang" @click="${this.toggleDropdown}">
+              ${this.currentLang === "tr" ? TR_FLAG() : EN_FLAG()}
+            </div>
+            <div class="dropdown-content">
+              <a @click="${() => this.changeLanguage("tr")}">
+                ${TR_FLAG()} Turkish
+              </a>
+              <a @click="${() => this.changeLanguage("en")}">
+                ${EN_FLAG()} English
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    `;
+  }
+
   static styles = css`
     :host {
       display: block;
@@ -154,50 +198,6 @@ class NavigationMenu extends LitElement {
       object-fit: contain;
     }
   `;
-
-  render() {
-    return html`
-      <nav>
-        <div class="nav-left">
-          <div class="logo-container">
-            <a href="/" class="logo-navigate">
-              ${ING_LOGO()}
-              <h4>ING</h4>
-            </a>
-          </div>
-        </div>
-        <div class="nav-right">
-          <div>
-            <a class="btn-container" href="/">
-            ${EMPLOYEE_ICON()}
-            ${translate("employees", this.currentLang)}
-          </a>
-          </div>
-          <div>
-            <a class="btn-container" href="/employee/new">
-          ${ADDNEW_ICON()}
-          ${translate("addNew", this.currentLang)}
-          
-        </a>
-          </div>
-
-          <div class="language-dropdown ${this.isOpen ? "open" : ""}">
-            <div class="selected-lang" @click="${this.toggleDropdown}">
-              ${this.currentLang === "tr" ? TR_FLAG() : EN_FLAG()}
-            </div>
-            <div class="dropdown-content">
-              <a @click="${() => this.changeLanguage("tr")}">
-                ${TR_FLAG()} Turkish
-              </a>
-              <a @click="${() => this.changeLanguage("en")}">
-                ${EN_FLAG()} English
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    `;
-  }
 }
 
 customElements.define("navigation-menu", NavigationMenu);

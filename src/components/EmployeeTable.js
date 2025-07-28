@@ -10,7 +10,6 @@ import '../components/ConfirmDialog';
 export class EmployeeTable extends BaseLocalizedElement {
   static properties = {
     employees: { type: Array },
-    
   };
 
   _onEdit(employee) {
@@ -197,8 +196,6 @@ static styles = css`
     }
   }
 `;
-
-
 }
 
 customElements.define('employee-table', EmployeeTable);

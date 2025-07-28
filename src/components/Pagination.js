@@ -49,28 +49,27 @@ export class Pagination extends LitElement {
 
     return html`
     <button
-  class="nav-button"
-  @click=${() => this._goTo(this.current - 1)}
-  ?disabled=${this.current === 1}
->&lt;</button>
-
-        ${pages.map((page) =>
-          page === '...'
-            ? html`<span class="ellipsis">...</span>`
-            : html`
-                <button
-                  class=${this.current === page ? 'active' : ''}
-                  @click=${() => this._goTo(page)}
-                >${page}</button>
-              `
-        )}
-
-      <button
-  class="nav-button"
-  @click=${() => this._goTo(this.current + 1)}
-  ?disabled=${this.current === this.total}
->&gt;</button>
-      </div>
+      class="nav-button"
+      @click=${() => this._goTo(this.current - 1)}
+      ?disabled=${this.current === 1}
+      >&lt;
+    </button>
+    ${pages.map((page) =>
+      page === '...'
+        ? html`<span class="ellipsis">...</span>`
+        : html`
+          <button
+            class=${this.current === page ? 'active' : ''}
+            @click=${() => this._goTo(page)}
+          >${page}</button>
+          `
+    )}
+    <button
+      class="nav-button"
+      @click=${() => this._goTo(this.current + 1)}
+      ?disabled=${this.current === this.total}
+      >&gt;
+    </button>
     `;
   }
 
@@ -117,7 +116,7 @@ export class Pagination extends LitElement {
     font-size: 14px;
     color: #aaa;
   }
-`;
+  `;
 
 }
 
