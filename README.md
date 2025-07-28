@@ -77,15 +77,3 @@ npm run test
 ```
 
 This will run all test files in the `src/tests/` directory that match the pattern `*.test.js`.
-
-### Example Test Command Output
-
-```bash
-> ing-case@1.0.0 test
-> web-test-runner --config web-test-runner.config.js
-
-Test Files:
-✔ src/tests/pagination.test.js (8 passed, 0 failed)
-✔ src/tests/employeeForm.test.js (6 passed, 0 failed)
-...
-```
