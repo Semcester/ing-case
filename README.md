@@ -19,6 +19,9 @@ cd ing-case
 ```bash
 npm install
 ```
+```bash
+npx playwright install
+```
 
 ### 3. Start the Development Server
 
