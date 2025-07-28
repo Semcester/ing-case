@@ -63,3 +63,29 @@ The app will be available at: [http://localhost](http://localhost)
 - Multi-language support (EN/TR)
 - Fully responsive layout
 - Data persistence via `localStorage`
+
+---
+
+## 🧪 Testing
+
+This project uses [@web/test-runner](https://modern-web.dev/docs/test-runner/overview/) with [@open-wc/testing](https://open-wc.org/docs/testing/) for unit testing.
+
+### Run All Tests
+
+```bash
+npm run test
+```
+
+This will run all test files in the `src/tests/` directory that match the pattern `*.test.js`.
+
+### Example Test Command Output
+
+```bash
+> ing-case@1.0.0 test
+> web-test-runner --config web-test-runner.config.js
+
+Test Files:
+✔ src/tests/pagination.test.js (8 passed, 0 failed)
+✔ src/tests/employeeForm.test.js (6 passed, 0 failed)
+...
+```
