@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { Router } from '@vaadin/router';
 import { translate } from "../i18n/index";
 import {store} from '../store/index.js'
@@ -50,8 +50,6 @@ export class EmployeeListPage extends BaseLocalizedElement {
         `${e.firstName} ${e.lastName}`.toLowerCase().includes(this.search.toLowerCase())
       )
       : all;
-
-
     const perPage = this._viewMode === 'list' ? 10 : 4;
     const start = (this.page - 1) * perPage;
     const end = start + perPage;
@@ -78,25 +76,26 @@ export class EmployeeListPage extends BaseLocalizedElement {
     store.dispatch(selectEmployee(data));
     Router.go(`/employees/edit/${data.id}`);
   }
+
   _onDelete(e) {
   const id = e.detail.id;
   const all = store.getState().employee.employees;
   const found = all.find(emp => emp.id === id);
   this._employeeToDelete = found;
   this._showConfirm = true;
-}
+  }
 
-    _handleConfirm(e) {
+  _handleConfirm(e) {
   const id = e.detail.id;
   store.dispatch(deleteEmployee(id));
   this._employeeToDelete = null;
   this._showConfirm = false;
-}
+  }
 
-_handleCancel() {
-  this._employeeToDelete = null;
-  this._showConfirm = false;
-}
+  _handleCancel() {
+    this._employeeToDelete = null;
+    this._showConfirm = false;
+  }
 
   _toggleView(mode) {
   this._viewMode = mode;

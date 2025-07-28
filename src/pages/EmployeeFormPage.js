@@ -8,13 +8,7 @@ import { BaseLocalizedElement } from '../components/BaseLocalizedElement.js';
 import '../components/EmployeeForm.js';
 
 export class EmployeeFormPage extends BaseLocalizedElement {
-  static styles = css`
-    h2 {
-      color: #ff6600;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-  `;
+ 
 
   static properties = {
     mode: { type: String },
@@ -79,6 +73,14 @@ export class EmployeeFormPage extends BaseLocalizedElement {
       ></employee-form>
     `;
   }
+
+   static styles = css`
+    h2 {
+      color: #ff6600;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  `;
 }
 
 customElements.define('employee-form-page', EmployeeFormPage);

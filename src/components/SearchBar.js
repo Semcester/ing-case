@@ -15,15 +15,15 @@ export class SearchBar extends BaseLocalizedElement {
   connectedCallback() {
   super.connectedCallback();
   document.addEventListener("language-changed", this._onLanguageChange);
-}
-disconnectedCallback() {
-  document.removeEventListener("language-changed", this._onLanguageChange);
-  super.disconnectedCallback();
-}
+  }
+  disconnectedCallback() {
+    document.removeEventListener("language-changed", this._onLanguageChange);
+    super.disconnectedCallback();
+  }
 
-_onLanguageChange = () => {
-  this.requestUpdate(); 
-};
+  _onLanguageChange = () => {
+    this.requestUpdate(); 
+  };
 
   _onInput(e) {
     const newValue = e.target.value;
@@ -47,20 +47,20 @@ _onLanguageChange = () => {
   }
 
   static styles = css`
-  input {
-    width: 12rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
+    input {
+      width: 12rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
 
-  input:focus {
-    border-color: #ff6600;
-    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.3);
-  }
+    input:focus {
+      border-color: #ff6600;
+      box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.3);
+    }
   `;
 }
 
