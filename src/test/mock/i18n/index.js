@@ -1,0 +1,1 @@
+export const translate = (key, lang) => `${key}_${lang}`;
